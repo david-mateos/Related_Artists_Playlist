@@ -14,6 +14,7 @@ into the console once permissions are accepted.
 
 @author: davidmateos
 """
+
 import spotipy
 import spotipy.util as util
 
@@ -39,6 +40,7 @@ t_range= 'medium_term' # using medium term listening time scale
 
 
 if token:
+  
     # S1: get user's top 10 artists and their related counterparts
     top_artists = sp.current_user_top_artists(time_range=t_range, limit=10)
     
@@ -73,5 +75,6 @@ if token:
     # S4: Fill playlist with top related artist tracks 
     sp.user_playlist_add_tracks(USERNAME, new_playlist_id, tracks)
 
+    # Check your Spotify!
 else:
     print("Could not get token for", USERNAME)
